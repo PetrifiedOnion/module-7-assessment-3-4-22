@@ -23,7 +23,9 @@ function doublerInsert(nums){
     }
 
 }
-
+// Results for the extraLargeArray
+// insert 2.3593661 s
+// append 10.8746 ms
 
 function getSizedArray(size){
     let array = [];
