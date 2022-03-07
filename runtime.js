@@ -39,7 +39,8 @@ function getSizedArray(size){
     }
     return array
 }
-
+// In the case of .push, the runtime complexity for an array should always be O(1) because the only one element is being effected, the element that is pushed, all other elements in the array remain static.
+// In the case of .unshift, the entire array is effected, as an element is added to beginning of the array, all subsequent elements must of necessity, move or back. The runtime complexity is therefore O(n) as the length of the array is relevant. The longer the array, the more complex and taxing the runtime.
 
 const tinyArray = getSizedArray(10);
 const smallArray = getSizedArray(100);
