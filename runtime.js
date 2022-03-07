@@ -2,14 +2,13 @@ const perf = require('execution-time')();
 
 
 function doublerAppend(nums){
-    perf.start()
 
-    let new_nums = [5,9,10,25,6,7,8];
+    let new_nums = [];
 
     for (let i=0; i<nums.length; i++){
         let num = nums[i] * 2;
         new_nums.push(num);
-        let resultsAppend = perf.stop
+
     }
 
 }
@@ -18,13 +17,11 @@ function doublerAppend(nums){
 // insert 1.0034081 s
 // append 4.8653 ms
 function doublerInsert(nums){
-perf.start()
-    let new_nums = [5,9,10,25,6,7,8];
+    let new_nums = [];
 
     for (let i=0; i<nums.length; i++){
         let num = nums[i] * 2;
         new_nums.unshift(num);
-        let resultsInsert = perf.stop()
     }
 
 }
@@ -55,16 +52,42 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
-doublerAppend(extraLargeArray);
+doublerAppend(mediumArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
 
 // Try it with second function
 perf.start();
-doublerInsert(extraLargeArray);
+doublerInsert(mediumArray);
 let resultsInsert = perf.stop();
 
 
-console.log('Results for the extraLargeArray');
+console.log('Results for the mediumArray');
 console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
+
+// Results for the extraLargeArray
+// insert 1.0153762 s
+// append 7.7126 ms
+
+// Results for the LargeArray
+// insert 10.0948 ms
+// append 869.2 μs
+
+// Results for the mediumArray
+// insert 223.2 μs
+// append 197.6 μs
+
+// Results for the smallArray
+// insert 60.8 μs
+// append 148.1 μs
+
+// Results for the tinyArray
+// insert 46 μs
+// append 123.7 μs
+
+// 
+// t
+// 
+// 
+// 
