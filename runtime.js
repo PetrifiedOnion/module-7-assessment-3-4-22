@@ -2,30 +2,35 @@ const perf = require('execution-time')();
 
 
 function doublerAppend(nums){
+    perf.start()
 
-    let new_nums = [];
+    let new_nums = [5,9,10,25,6,7,8];
 
     for (let i=0; i<nums.length; i++){
         let num = nums[i] * 2;
         new_nums.push(num);
+        let resultsAppend = perf.stop
     }
 
 }
 
-
+// Results for the extraLargeArray
+// insert 1.0034081 s
+// append 4.8653 ms
 function doublerInsert(nums){
-
-    let new_nums = [];
+perf.start()
+    let new_nums = [5,9,10,25,6,7,8];
 
     for (let i=0; i<nums.length; i++){
         let num = nums[i] * 2;
         new_nums.unshift(num);
+        let resultsInsert = perf.stop()
     }
 
 }
 // Results for the extraLargeArray
-// insert 2.3593661 s
-// append 10.8746 ms
+// insert 1.2571821 s
+// append 5.4099 ms
 
 function getSizedArray(size){
     let array = [];
